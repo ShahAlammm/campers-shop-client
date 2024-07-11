@@ -33,7 +33,7 @@ const MainLayout = () => {
 
                 <div className="drawer-side ">
                     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu backdrop-blur-2xl bg-white/1 glass min-h-full w-72 p-4 text-black font-semibold">
+                    <ul className="menu backdrop-blur-2xl bg-white/1 glass min-h-full w-72 p-4 text-white font-semibold">
                         <div className="flex items-center justify-center w-full">
                             <NavTitle />
                         </div>

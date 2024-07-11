@@ -20,7 +20,7 @@ const SecondaryNavBar = () => {
 
     return (
         <div className={` z-50 w-10/12  ${showNav ? 'fixed top-0 block' : 'hidden'}`}>
-            <div className={`navbar glass hidden lg:flex backdrop-blur-2xl bg-white/40 shadow-2xl rounded-b-2xl`}>
+            <div className={`navbar glass hidden lg:flex backdrop-blur-2xl  bg-black/40  shadow-black/50 shadow-lg rounded-b-2xl`}>
                 <div className="navbar-start">
                     <Link to={'/'}><img
                         src='/src/assets/logo.png'
@@ -29,12 +29,12 @@ const SecondaryNavBar = () => {
                     /></Link>
                 </div>
                 <div className="navbar-center">
-                    <ul className="menu menu-horizontal px-1 text-black font-semibold">
+                    <ul className="menu menu-horizontal px-1 text-white font-semibold">
                         {navLinks}
                     </ul>
                 </div>
                 <div className="navbar-end ">
-                    <ul className="menu menu-horizontal font-semibold uppercase text-black">
+                    <ul className="menu menu-horizontal font-semibold uppercase text-white">
                         {navIcons}
                     </ul>
                 </div>

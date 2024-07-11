@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center text-black rounded p-10">
+        <footer className="footer footer-center text-white rounded p-10">
             <NavTitle />
-            <ul className="menu menu-horizontal font-semibold text-black ">
+            <ul className="menu menu-horizontal font-semibold text-white ">
                 {navLinks}
             </ul>
             <nav>

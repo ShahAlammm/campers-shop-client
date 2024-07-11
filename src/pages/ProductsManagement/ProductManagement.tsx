@@ -10,6 +10,7 @@ const ProductManagement = () => {
                 <ProductCard />
                 <ProductCard />
                 <ProductCard />
+                
             </div>
         </div>
     );

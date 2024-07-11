@@ -5,10 +5,10 @@ const NavBar = () => {
 
 
     return (
-        <div className={`navbar w-full backdrop-blur-2xl bg-white/40 glass shadow-2xl`}>
+        <div className={`navbar w-full backdrop-blur-2xl bg-black/40 glass shadow-black/50 shadow-lg`}>
             <div className="container m-auto">
                 <div className="flex-none lg:hidden">
-                    <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square text-black btn-ghost">
+                    <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square text-white btn-ghost">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -24,13 +24,13 @@ const NavBar = () => {
                 </div>
                 <NavTitle />
                 <div className="hidden flex-auto justify-center items-center lg:block">
-                    <ul className="menu menu-horizontal font-semibold text-black ">
+                    <ul className="menu menu-horizontal font-semibold text-white ">
                         {navLinks}
                     </ul>
                 </div>
 
                 <div className="hidden justify-center  items-center lg:block ">
-                    <ul className="menu menu-horizontal font-semibold  text-black uppercase">
+                    <ul className="menu menu-horizontal font-semibold  text-white uppercase">
                         {navIcons}
                     </ul>
                 </div>

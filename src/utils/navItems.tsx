@@ -18,7 +18,7 @@ export const navLinks = (
             <NavLink
                 to="/products"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "btn btn-warning" : "text-black"
+                    isPending ? "pending" : isActive ? "btn btn-warning" : ""
                 }
             >
                 All Products
@@ -74,7 +74,7 @@ export const sideLinks = (
             <NavLink
                 to="/products"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "btn btn-warning" : "text-black"
+                    isPending ? "pending" : isActive ? "btn btn-warning" : ""
                 }
             >
                 All Products
@@ -112,13 +112,13 @@ export const sideLinks = (
         </li>
         <li>
             <li>
-                <Cart />
-            </li>
-            <li>
-                <Cart />
-            </li>
-            <li>
-                <Cart />
+                <NavLink to={'/cart'}
+                    className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "btn btn-warning" : ""
+                    }
+                >
+                    <Cart />
+                </NavLink>
             </li>
         </li>
     </>
@@ -128,10 +128,13 @@ export const sideLinks = (
 export const navIcons = (
     <>
         <li>
-            <Cart />
-        </li>
-        <li>
-            <Cart />
+            <NavLink to={'/cart'}
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "btn btn-warning" : ""
+                }
+            >
+                <Cart />
+            </NavLink>
         </li>
     </>
 );
