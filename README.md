@@ -84,3 +84,14 @@ Campers Shop is an e-commerce website dedicated to providing all the necessary a
    ```bash
    git clone https://github.com/ShahAlammm/campers-shop-client
    cd campers-shop
+
+2. ### Configuration
+
+1. Create a `.env` file in the root directory of the project.
+2. Add necessary configuration variables in the `.env` file.
+   Example:
+   ```bash
+    PORT=5000
+    DB_URL=your_db_connection_uri
+    API_KEY=your_api_key_here
+   ```
