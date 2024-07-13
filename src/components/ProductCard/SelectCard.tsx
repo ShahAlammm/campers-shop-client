@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 
+import { removeProduct } from "@/redux/feature/productSlice";
+import { useAppDispatch } from "@/redux/hooks";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from 'sweetalert2'
 
 const SelectCard = (item: any) => {
 
-
+    const dispatch = useAppDispatch()
 
     const handleDelete = () => {
         Swal.fire({
@@ -22,10 +24,10 @@ const SelectCard = (item: any) => {
                 Swal.fire({
                     title: "Deleted!",
                     text: "Your file has been deleted.",
-                    icon: "success"
+                    icon: "success",
                 });
-                // deleteProduct(item?.item?._id)
             }
+            dispatch(removeProduct(item?.item?._id))
         });
     }
 
@@ -35,11 +37,11 @@ const SelectCard = (item: any) => {
                 <figure>
                     <img
                         className="h-48 object-cover rounded-l-lg transition-transform duration-300 hover:scale-105"
-                        src={item?.item.image}
-                        alt={item?.item.name} />
+                        src={item?.item?.image}
+                        alt={item?.item?.name} />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">{item?.item.name}</h2>
+                    <h2 className="card-title">{item?.item?.name}</h2>
                     <p>{item?.item.name}</p>
                     <div className="card-actions justify-end">
                         <button onClick={handleDelete} className="btn text-red-600 text-xl"><RiDeleteBin6Line /></button>

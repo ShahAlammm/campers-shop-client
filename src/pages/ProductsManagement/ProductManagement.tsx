@@ -1,6 +1,6 @@
 import ManagementCard from "@/components/ProductCard/ManagementCard";
 import { useGetAllProductQuery } from "@/redux/api/baseApi";
-import { TProduct } from "@/redux/feature/productSlice";
+import { TCartProps } from "@/redux/feature/productSlice";
 import { FaPlusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const ProductManagement = () => {
             </div>
             <div className="divider divider-warning pb-5"></div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                {products?.data?.map((item: TProduct) => <ManagementCard item={item} />)}
+                {products?.data?.map((item: TCartProps) => <ManagementCard {...item} />)}
 
             </div>
         </div>

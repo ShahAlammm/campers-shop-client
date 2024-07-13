@@ -1,7 +1,21 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export type TProduct = {
   id: string;
+  name: string;
+  price: string;
+  image: string;
+  description: string;
+  category: string;
+  topSelling: boolean;
+  brand: string;
+  quantity: string;
+  slug: string;
+  isDeleted?: boolean;
+};
+export type TCartProps = {
+  _id: string;
   name: string;
   price: string;
   image: string;
@@ -31,17 +45,17 @@ const productSlice = createSlice({
     addProduct: (state, action: PayloadAction<TProduct>) => {
       state.product.push({ ...action.payload, isDeleted: false });
     },
-    removeProduct: (state, action: PayloadAction<string>) => {
-      state.product = state.product.filter(
-        (item) => item.id !== action.payload
-      );
-    },
     toggleComplete: (state, action: PayloadAction<string>) => {
-      const selling = state.product.find((item) => item.id === action.payload);
+      // @ts-ignore
+      const selling = state.product.find((item) => item._id === action.payload);
       selling!.topSelling = !selling?.topSelling;
     },
     setCart: (state, action: PayloadAction<TProduct>) => {
       state.cart.push(action.payload); // Push item to the cart array
+    },
+    removeProduct: (state, action: PayloadAction<string>) => {
+      // @ts-ignore
+      state.cart = state.cart.filter((item) => item._id !== action.payload);
     },
   },
 });

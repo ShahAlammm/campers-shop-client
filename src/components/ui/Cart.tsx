@@ -9,7 +9,7 @@ const Cart = () => {
 
         <div className="flex">
             <IoCartSharp className="text-2xl" />
-            {getCartItem ? <div className="badge badge-secondary p-1 absolute top-0 ml-3">{getCartItem?.length}</div> : ""}
+            {getCartItem?.length ? <div className="badge badge-secondary p-1 absolute top-0 ml-3">{getCartItem?.length}</div> : ""}
         </div>
 
     );

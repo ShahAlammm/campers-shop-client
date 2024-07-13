@@ -2,10 +2,12 @@ import SelectCard from "@/components/ProductCard/SelectCard";
 import { selectCartItems } from "@/redux/feature/productSelector";
 import { TProduct } from "@/redux/feature/productSlice";
 import { useAppSelector } from "@/redux/hooks";
+
 import { Link } from "react-router-dom";
 
 
 const Cart = () => {
+
     const getCartItem = useAppSelector(selectCartItems)
 
     return (

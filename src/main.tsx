@@ -11,11 +11,11 @@ import { ThemeProvider } from './components/ThemeProvider/theme-provider.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Provider store={store}>
-    <ThemeProvider defaultTheme="light">
-      <RouterProvider router={router} />
-    </ThemeProvider>
-    </Provider>
     <Toaster position="top-center" />
+    <Provider store={store}>
+      <ThemeProvider defaultTheme="light">
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>,
 )
