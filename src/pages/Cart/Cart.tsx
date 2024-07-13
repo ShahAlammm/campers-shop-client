@@ -10,6 +10,8 @@ const Cart = () => {
 
     const getCartItem = useAppSelector(selectCartItems)
 
+    const totalAmount = getCartItem.reduce((total, item) => total + parseFloat(item.price), 0);
+
     return (
         <div>
             <div className='flex justify-center text-center items-center py-5'>
@@ -32,9 +34,9 @@ const Cart = () => {
                     </div>
                     <div className="py-5 text-white">
                         <p className="text-lg font-semibold">Total Product: {getCartItem?.length}</p>
-                        <p className="text-lg font-semibold">Total Amount: </p>
+                        <p className="text-lg font-semibold">Total Amount: {totalAmount}</p>
                     </div>
-                   <Link to={'/checkout'}> <button className="btn btn-block text-lg font-semibold bg-yellow-500">Checkout</button></Link>
+                    <Link to={'/checkout'}> <button className="btn btn-block text-lg font-semibold bg-yellow-500">Checkout</button></Link>
                 </div>
             </div>
 
