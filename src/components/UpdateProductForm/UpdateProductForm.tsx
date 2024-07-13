@@ -1,11 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useAddProductMutation } from '@/redux/api/baseApi';
-import { FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'sonner';
+import { useState } from "react";
 
-const AddProductForm = () => {
-    const navigate = useNavigate()
+
+const UpdateProductForm = () => {
 
     const [product, setProduct] = useState({
         name: '',
@@ -15,11 +12,8 @@ const AddProductForm = () => {
         image: '',
         price: '',
         description: ''
-    });
+    })
 
-
-    const [addProduct, { data, isError, isLoading, isSuccess }] = useAddProductMutation()
-    console.log({ data, isError, isLoading, isSuccess })
 
     const handleChange = (e: { target: { name: any; value: any; }; }) => {
         setProduct({
@@ -28,16 +22,9 @@ const AddProductForm = () => {
         });
     };
 
-    const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
+    const handleSubmit = () => {
 
-        if (product) {
-            toast.success('Product added successfully')
-            await addProduct(product)
-            navigate('/management')
-        }
-
-    };
+    }
 
     return (
         <div className='py-5'>
@@ -74,14 +61,13 @@ const AddProductForm = () => {
                                 className="select select-bordered w-full"
                                 value={product.category}
                                 onChange={handleChange}
-                                defaultValue={"Camping"}
                                 required
                             >
-                                <option disabled value="">Select Category</option>
-                                <option value="Hiking">Hiking</option>
-                                <option value="Camping">Camping</option>
-                                <option value="Mountaineering">Mountaineering</option>
-                                <option value="Climbing">Climbing</option>
+                                <option disabled selected>Select Category</option>
+                                <option>Hiking</option>
+                                <option>Camping</option>
+                                <option>Mountaineering</option>
+                                <option>Climbing</option>
                             </select>
                         </div>
                     </div>
@@ -169,4 +155,4 @@ const AddProductForm = () => {
     );
 };
 
-export default AddProductForm;
+export default UpdateProductForm;

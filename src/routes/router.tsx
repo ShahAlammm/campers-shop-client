@@ -7,6 +7,7 @@ import ProductManagement from "@/pages/ProductsManagement/ProductManagement";
 import Checkout from "@/pages/Checkout/Checkout";
 import App from "@/App";
 import AddProductForm from "@/components/AddProductForm/AddProductForm";
+import UpdateProductForm from "@/components/UpdateProductForm/UpdateProductForm";
 
 
 
@@ -29,8 +30,12 @@ const router = createBrowserRouter([
                 element: <ProductManagement />
             },
             {
-                path: 'addProduct',
+                path: '/addProduct',
                 element: <AddProductForm />
+            },
+            {
+                path: '/updateProduct',
+                element: <UpdateProductForm />
             },
             {
                 path: '/cart',

@@ -16,7 +16,14 @@ const Category = () => {
 
     if (isLoading) {
         return <>
-            <p>Loading.....</p>
+            <div className="flex justify-center items-center">
+                <div className="flex w-52 flex-col gap-4">
+                    <div className="skeleton h-32 w-full"></div>
+                    <div className="skeleton h-4 w-28"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                    <div className="skeleton h-4 w-full"></div>
+                </div>
+            </div>
         </>
     }
 
@@ -25,10 +32,10 @@ const Category = () => {
         setActiveTab(index);
     };
 
-    const hiking = products?.data?.filter((item: { category: string }) => item.category === "hiking");
-    const camping = products?.data?.filter((item: { category: string }) => item.category === "camping");
-    const climbing = products?.data?.filter((item: { category: string }) => item.category === "climbing");
-    const mountaineering = products?.data?.filter((item: { category: string }) => item.category === "mountaineering");
+    const hiking = products?.data?.filter((item: { category: string }) => item.category === "Hiking");
+    const camping = products?.data?.filter((item: { category: string }) => item.category === "Camping");
+    const climbing = products?.data?.filter((item: { category: string }) => item.category === "Climbing");
+    const mountaineering = products?.data?.filter((item: { category: string }) => item.category === "Mountaineering");
 
     return (
         <div className="py-10 ">
@@ -50,7 +57,7 @@ const Category = () => {
                 />
                 <div role="tabpanel" className={`tab-content    border-yellow-400 rounded-box p-6 ${activeTab === 0 ? 'block' : 'hidden'}`}>
                     <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {hiking?.map((item: TProduct)=> (
+                        {hiking?.map((item: TProduct) => (
                             <ProductCard item={item} />
                         ))}
                     </div>
@@ -66,8 +73,8 @@ const Category = () => {
                     onChange={() => handleTabChange(1)}
                 />
                 <div role="tabpanel" className={`tab-content  border-yellow-400 rounded-box p-6 ${activeTab === 1 ? 'block' : 'hidden'}`}>
-                <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {camping?.map((item: TProduct)=> (
+                    <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                        {camping?.map((item: TProduct) => (
                             <ProductCard item={item} />
                         ))}
                     </div>
@@ -83,8 +90,8 @@ const Category = () => {
                     onChange={() => handleTabChange(2)}
                 />
                 <div role="tabpanel" className={`tab-content  border-yellow-400 rounded-box p-6 ${activeTab === 2 ? 'block' : 'hidden'}`}>
-                <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {climbing?.map((item: TProduct)=> (
+                    <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                        {climbing?.map((item: TProduct) => (
                             <ProductCard item={item} />
                         ))}
                     </div>
@@ -100,8 +107,8 @@ const Category = () => {
                     onChange={() => handleTabChange(3)}
                 />
                 <div role="tabpanel" className={`tab-content  border-yellow-400 rounded-box p-6 ${activeTab === 3 ? 'block' : 'hidden'}`}>
-                <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {mountaineering?.map((item: TProduct)=> (
+                    <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                        {mountaineering?.map((item: TProduct) => (
                             <ProductCard item={item} />
                         ))}
                     </div>

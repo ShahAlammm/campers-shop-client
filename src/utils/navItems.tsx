@@ -36,16 +36,6 @@ export const navLinks = (
         </li>
         <li>
             <NavLink
-                to="/checkout"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "btn btn-warning" : ""
-                }
-            >
-                Checkout Page
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
                 to="/about"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "btn btn-warning" : ""
@@ -88,16 +78,6 @@ export const sideLinks = (
                 }
             >
                 Products Management
-            </NavLink>
-        </li>
-        <li>
-            <NavLink
-                to="/checkout"
-                className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "btn btn-warning" : ""
-                }
-            >
-                Checkout Page
             </NavLink>
         </li>
         <li>
