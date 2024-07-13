@@ -22,7 +22,7 @@ const ProductCard = ({ item }: { item: TProduct }) => {
 
   return (
     <>
-      <Card className="bg-white text-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+      <Card className="  rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
         <Link to={`/`}>
           <CardHeader className="p-2">
             <img

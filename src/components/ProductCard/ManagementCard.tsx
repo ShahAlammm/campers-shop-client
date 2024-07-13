@@ -7,7 +7,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 const ManagementCard = (item:any) => {
 
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div className="card lg:card-side bg-white/40 glass shadow-xl">
             <figure>
                 <img
                     className="h-48 object-cover rounded-l-lg transition-transform duration-300 hover:scale-105"

@@ -48,7 +48,7 @@ const Category = () => {
                     checked={activeTab === 0}
                     onChange={() => handleTabChange(0)}
                 />
-                <div role="tabpanel" className={`tab-content  text-white  border-yellow-400 rounded-box p-6 ${activeTab === 0 ? 'block' : 'hidden'}`}>
+                <div role="tabpanel" className={`tab-content    border-yellow-400 rounded-box p-6 ${activeTab === 0 ? 'block' : 'hidden'}`}>
                     <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {hiking?.map((item: TProduct)=> (
                             <ProductCard item={item} />
@@ -65,7 +65,7 @@ const Category = () => {
                     checked={activeTab === 1}
                     onChange={() => handleTabChange(1)}
                 />
-                <div role="tabpanel" className={`tab-content text-white border-yellow-400 rounded-box p-6 ${activeTab === 1 ? 'block' : 'hidden'}`}>
+                <div role="tabpanel" className={`tab-content  border-yellow-400 rounded-box p-6 ${activeTab === 1 ? 'block' : 'hidden'}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {camping?.map((item: TProduct)=> (
                             <ProductCard item={item} />
@@ -82,7 +82,7 @@ const Category = () => {
                     checked={activeTab === 2}
                     onChange={() => handleTabChange(2)}
                 />
-                <div role="tabpanel" className={`tab-content text-white border-yellow-400 rounded-box p-6 ${activeTab === 2 ? 'block' : 'hidden'}`}>
+                <div role="tabpanel" className={`tab-content  border-yellow-400 rounded-box p-6 ${activeTab === 2 ? 'block' : 'hidden'}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {climbing?.map((item: TProduct)=> (
                             <ProductCard item={item} />
@@ -99,7 +99,7 @@ const Category = () => {
                     checked={activeTab === 3}
                     onChange={() => handleTabChange(3)}
                 />
-                <div role="tabpanel" className={`tab-content text-white border-yellow-400 rounded-box p-6 ${activeTab === 3 ? 'block' : 'hidden'}`}>
+                <div role="tabpanel" className={`tab-content  border-yellow-400 rounded-box p-6 ${activeTab === 3 ? 'block' : 'hidden'}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {mountaineering?.map((item: TProduct)=> (
                             <ProductCard item={item} />
