@@ -22,7 +22,7 @@ const Cart = () => {
             <div className="divider divider-warning"></div>
             <div className="flex">
                 <div className="flex-1">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         {getCartItem?.map((item: TProduct) => <SelectCard item={item} />)}
                     </div>
                 </div>
@@ -36,7 +36,7 @@ const Cart = () => {
                         <p className="text-lg font-semibold">Total Product: {getCartItem?.length}</p>
                         <p className="text-lg font-semibold">Total Amount: {totalAmount}</p>
                     </div>
-                    <Link to={'/checkout'}> <button className="btn btn-block text-lg font-semibold bg-yellow-500">Checkout</button></Link>
+                    <Link to={'/user'}> <button className="btn btn-block text-lg font-semibold bg-yellow-500">Place Order</button></Link>
                 </div>
             </div>
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
@@ -10,7 +11,7 @@ export type TProduct = {
   category: string;
   topSelling: boolean;
   brand: string;
-  quantity: string;
+  quantity: number;
   slug: string;
   isDeleted?: boolean;
 };
@@ -23,7 +24,7 @@ export type TCartProps = {
   category: string;
   topSelling: boolean;
   brand: string;
-  quantity: string;
+  quantity: number;
   slug: string;
   isDeleted?: boolean;
 };
@@ -57,8 +58,22 @@ const productSlice = createSlice({
       // @ts-ignore
       state.cart = state.cart.filter((item) => item._id !== action.payload);
     },
+    updateProductQuantity: (state, action) => {
+      // @ts-ignore
+      const product = state.find(
+        (product: { _id: any }) => product._id === action.payload.id
+      );
+      if (product) {
+        product.quantity = action.payload.quantity;
+      }
+    },
   },
 });
-export const { addProduct, removeProduct, toggleComplete, setCart } =
-  productSlice.actions;
+export const {
+  addProduct,
+  removeProduct,
+  toggleComplete,
+  setCart,
+  updateProductQuantity,
+} = productSlice.actions;
 export default productSlice.reducer;

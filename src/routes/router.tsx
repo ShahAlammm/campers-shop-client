@@ -7,6 +7,7 @@ import ProductManagement from "@/pages/ProductsManagement/ProductManagement";
 import Checkout from "@/pages/Checkout/Checkout";
 import App from "@/App";
 import AddProductForm from "@/components/AddProductForm/AddProductForm";
+import User from "@/pages/User/User";
 
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <Cart />
+            },
+            {
+                path: '/user',
+                element: <User />
             },
             {
                 path: '/checkout',

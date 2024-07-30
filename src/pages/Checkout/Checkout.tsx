@@ -1,3 +1,4 @@
+import Payment from "@/components/Payment/Payment";
 
 const Checkout = () => {
     return (
@@ -8,7 +9,7 @@ const Checkout = () => {
                 </h1>
             </div>
             <div className="divider divider-warning"></div>
-
+            <Payment />
         </div>
     );
 };

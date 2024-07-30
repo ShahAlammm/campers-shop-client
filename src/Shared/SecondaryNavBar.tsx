@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { navIcons, navLinks } from "@/utils/navItems";
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const SecondaryNavBar = () => {
     const [showNav, setShowNav] = useState(false);
@@ -23,7 +24,7 @@ const SecondaryNavBar = () => {
             <div className={`navbar glass hidden lg:flex backdrop-blur-2xl  bg-black/40  shadow-black/50 shadow-lg rounded-b-2xl`}>
                 <div className="navbar-start">
                     <Link to={'/'}><img
-                        src='/src/assets/logo.png'
+                        src={logo}
                         className="size-20 object-cover transition-transform duration-500 hover:scale-105"
                         alt="image"
                     /></Link>

@@ -80,7 +80,7 @@ const ManagementCard = ({ _id, name, price, description, image, category, quanti
             <div className="card lg:card-side bg-white/40 glass shadow-xl">
                 <figure>
                     <img
-                        className="h-48 object-cover rounded-l-lg transition-transform duration-300 hover:scale-105"
+                        className="h-48 object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                         src={image}
                         alt={name} />
                 </figure>
@@ -94,8 +94,14 @@ const ManagementCard = ({ _id, name, price, description, image, category, quanti
                                 defaultChecked={topSelling} className="checkbox checkbox-primary" />
                         </label>
                     </div>
-                    <h2 className="card-title">{name}</h2>
-                    <p>{name}</p>
+                    <h2 className="card-title font-bold">{name}</h2>
+                    <div className="font-semibold space-y-2">
+                        <p><span className="font-bold">Description: </span>{description}</p>
+                        <p><span className="font-bold">Category: </span>{category}</p>
+                        <p><span className="font-bold">Brand: </span>{brand}</p>
+                        <p><span className="font-bold">Quantity: </span>{quantity}</p>
+                        <p><span className="font-bold">Price: </span>{price}</p>
+                    </div>
                     <div className="card-actions justify-end">
                         <button onClick={handleOpenModal} className="btn text-xl text-blue-600"><FaEdit /></button>
                         <button onClick={handleDelete} className="btn text-red-600 text-xl"><RiDeleteBin6Line /></button>

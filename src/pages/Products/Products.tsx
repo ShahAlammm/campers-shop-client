@@ -66,7 +66,7 @@ const Products = () => {
                 </h1>
             </div>
             {/* All Search and query handle from here*/}
-            <div className='flex justify-between mb-4'>
+            <div className='md:flex md:justify-between mb-4'>
                 <div>
                     <div className="join">
                         <select
@@ -92,6 +92,9 @@ const Products = () => {
                     </div>
                 </div>
                 <div>
+                    <button className="btn font-bold bg-yellow-400" onClick={clearFilters}>Clear</button>
+                </div>
+                <div>
                     <div className="join">
                         <input
                             className="input input-bordered join-item"
@@ -99,7 +102,7 @@ const Products = () => {
                             value={search}
                             onChange={handleSearchChange}
                         />
-                        <button className="btn join-item bg-yellow-400" onClick={clearFilters}>Clear</button>
+                        <button className="btn md:hidden lg:flex join-item bg-yellow-400" >Search</button>
                     </div>
                 </div>
             </div>

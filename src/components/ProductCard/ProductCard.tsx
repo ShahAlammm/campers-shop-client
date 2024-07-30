@@ -1,12 +1,15 @@
-// ProductCard.tsx
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import { setCart, TProduct } from "@/redux/feature/productSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { useRef } from "react";
+import { IoCartSharp } from "react-icons/io5";
+import { toast } from "sonner";
 
 const ProductCard = ({ item }: { item: TProduct }) => {
   const dispatch = useAppDispatch();
   const modalRef = useRef<HTMLDialogElement>(null);
+
 
   const handleOpenModal = () => {
     if (modalRef.current) {
@@ -20,8 +23,10 @@ const ProductCard = ({ item }: { item: TProduct }) => {
     }
   };
 
-  const handleAddToCart = () => {
-    dispatch(setCart(item)); // Dispatch action to add item to cart
+  const handleAddToCart = async () => {
+    toast.success('Product Added successfully!')
+    dispatch(setCart(item));
+
   };
 
   return (
@@ -38,7 +43,7 @@ const ProductCard = ({ item }: { item: TProduct }) => {
           <CardContent className="grid p-4">
             <CardTitle className="mt-2 text-3xl font-extrabold">{item?.name}</CardTitle>
             <p className="text-lg mt-3 font-semibold">Brand: {item?.brand}</p>
-            <p className="text-lg font-semibold">Price: {item?.price} <span className="text-sm">tk</span></p>
+            <p className="text-lg font-semibold">Price: {item?.price} <span className="text-sm">$</span></p>
           </CardContent>
         </div>
         <CardFooter className="p-4 border-t border-gray-700">
@@ -67,7 +72,7 @@ const ProductCard = ({ item }: { item: TProduct }) => {
               <p><span className="font-semibold text-lg">Description:</span> {item?.description}</p>
               <p><span className="font-semibold text-lg">Brand:</span> {item?.brand}</p>
               <p><span className="font-semibold text-lg">Quantity:</span> {item?.quantity}</p>
-              <p><span className="font-semibold text-lg">Price:</span> {item?.price} tk</p>
+              <p><span className="font-semibold text-lg">Price:</span> {item?.price} $</p>
             </div>
           </div>
           <div className="justify-between">
@@ -75,7 +80,7 @@ const ProductCard = ({ item }: { item: TProduct }) => {
               {/* Buttons */}
               <div className="flex justify-between">
                 <button className="btn bg-yellow-400" onClick={handleAddToCart}>
-                  Add to cart
+                  Add to cart<IoCartSharp className="text-xl" />
                 </button>
                 <button className="btn bg-yellow-400" onClick={handleCloseModal}>
                   Close

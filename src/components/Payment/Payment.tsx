@@ -24,15 +24,16 @@ const Payment = () => {
     //   });
 
     return (
-        <div className="hero min-h-screen bg-base-200 py-24">
+        <div className="hero  py-4">
             <div className="hero-content">
 
-                <div className="card shrink-0 w-full shadow-2xl bg-base-100 p-5">
+                <div className="card shrink-0 w-full shadow-2xl bg-white/70 p-2">
                     <h1 className="text-5xl font-bold text-center pb-4">Pay now!</h1>
                     <div className="drop-shadow-lg hover:drop-shadow-2xl">
                         <img
                             src="https://i.ibb.co/Sx5w4Gn/pngimg-com-credit-card-PNG23.png"
                             alt="Album"
+                            className="h-[400px] w-[600px]"
                         />
                     </div>
                     <div className="flex items-center gap-4 p-4 px-5 rounded-t-md shadow-md space-y-3">

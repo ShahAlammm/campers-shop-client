@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"; // Ens
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://campers-shop-server-flax.vercel.app/api" }),
   tagTypes: ["product"],
   endpoints: (builder) => ({
     getAllProduct: builder.query({
